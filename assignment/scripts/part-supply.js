@@ -48,10 +48,39 @@ for (i=0; i<supplyChanges.length; i++) {
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
-
+for (let x of supplyChanges) {
+  console.log(x);
+  switch (true) {
+    case (x<0):
+      console.log('Removed', Math.abs(x), 'parts');
+      break;
+    case (x==0):
+      console.log('No change');
+      break;
+    case (x>0):
+      console.log('Added', Math.abs(x), 'parts');
+      break;
+  }
+}// I could re-write the switch using if/else as a quick exercise...think on that.
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+i=0;
+while (i<supplyChanges.length) {
+  let x = supplyChanges[i];
+  console.log(x);
+  switch (true) {
+    case (x<0):
+      console.log('Removed', Math.abs(x), 'parts');
+      break;
+    case (x==0):
+      console.log('No change');
+      break;
+    case (x>0):
+      console.log('Added', Math.abs(x), 'parts');
+      break;
+  }
+  i++;//This should happen after the switch case is determined for each value x
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
